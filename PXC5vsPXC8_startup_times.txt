@@ -1,0 +1,44 @@
+### PXC 8.0 with xtrabackup SST(default and only option) 
+$time ./dbdeployer deploy  replication  --topology=pxc pxc8.0.18
+Installing and starting node 1
+.. sandbox server started
+Installing and starting node 2
+........................... sandbox server started
+Installing and starting node 3
+............................ sandbox server started
+Replication directory installed in $HOME/sandboxes/pxc_msb_pxc8_0_18
+run 'dbdeployer usage multiple' for basic instructions'
+real	1m14.007s
+user	0m6.484s
+sys	0m1.108s
+
+### PXC 5.7 with rsync SST
+$ time dbdeployer deploy  replication  --topology=pxc pxc5.7.28
+Creating directory /home/dba/sandboxes
+Installing and starting node 1
+. sandbox server started
+Installing and starting node 2
+..... sandbox server started
+Installing and starting node 3
+..... sandbox server started
+Replication directory installed in $HOME/sandboxes/pxc_msb_pxc5_7_28
+run 'dbdeployer usage multiple' for basic instructions'
+real	0m38.390s
+user	0m10.512s
+sys	0m0.456s
+
+### PXC 5.7 with XtraBackup SST
+
+
+$ time dbdeployer deploy  replication  --topology=pxc pxc5.7.28 -c  wsrep_sst_method=xtrabackup-v2 -c wsrep_sst_auth=root:msandbox
+Installing and starting node 1
+. sandbox server started
+Installing and starting node 2
+...................... sandbox server started
+Installing and starting node 3
+.................... sandbox server started
+Replication directory installed in $HOME/sandboxes/pxc_msb_pxc5_7_28
+run 'dbdeployer usage multiple' for basic instructions'
+real	1m11.423s
+user	0m10.856s
+sys	0m0.612s
